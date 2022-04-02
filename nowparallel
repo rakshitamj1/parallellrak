@@ -1,0 +1,18 @@
+pipeline {
+    agent none
+    stages {
+        
+      stage('run-parallel-branches') {
+  steps {
+    parallel(
+      a: {
+        echo "This is now branch a"
+      },
+      b: {
+        echo "This is now branch b"
+      }
+    )
+  }
+}
+}
+}
